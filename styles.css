@@ -1,0 +1,1015 @@
+:root {
+    --tekken-red: #e30613;
+    --tekken-blue: #1e90ff;
+    --tekken-yellow: #ffcc00;
+    --tekken-dark: #0a0a12;
+    --tekken-dark-secondary: #1a1a24;
+    --tekken-light: #f8f9fa;
+    --tekken-gray: #6c757d;
+}
+
+/* Base Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--tekken-dark);
+    color: var(--tekken-light);
+    overflow-x: hidden;
+}
+
+.dark-theme {
+    background-color: var(--tekken-dark);
+    color: var(--tekken-light);
+}
+
+.tekken-font {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.tekken-red {
+    color: var(--tekken-red);
+}
+
+.tekken-blue {
+    color: var(--tekken-blue);
+}
+
+.tekken-yellow {
+    color: var(--tekken-yellow);
+}
+
+/* Loading Screen */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--tekken-dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease-out;
+}
+
+.tekken-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.tekken-logo span {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    font-size: 3rem;
+    color: var(--tekken-red);
+    text-shadow: 0 0 10px rgba(227, 6, 19, 0.7);
+    line-height: 1.2;
+}
+
+.tekken-logo span:last-child {
+    color: var(--tekken-blue);
+    text-shadow: 0 0 10px rgba(30, 144, 255, 0.7);
+}
+
+.progress-bar {
+    width: 300px;
+    height: 10px;
+    background-color: var(--tekken-dark-secondary);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, var(--tekken-red), var(--tekken-blue));
+    animation: progressLoad 2s forwards;
+}
+
+@keyframes progressLoad {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+
+/* Navigation */
+.navbar {
+    background-color: rgba(10, 10, 18, 0.9) !important;
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(227, 6, 19, 0.3);
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+}
+
+.nav-link {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 500;
+    margin: 0 0.5rem;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--tekken-red);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link.active::after {
+    width: 100%;
+    background-color: var(--tekken-blue);
+}
+
+/* Buttons */
+.btn-tekken-red {
+    background-color: var(--tekken-red);
+    color: white;
+    border: none;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 0.75rem 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-tekken-red:hover {
+    background-color: #c00511;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(227, 6, 19, 0.4);
+}
+
+.btn-tekken-red::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.btn-tekken-red:hover::before {
+    left: 100%;
+}
+
+.btn-tekken-outline {
+    background-color: transparent;
+    color: var(--tekken-blue);
+    border: 2px solid var(--tekken-blue);
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 0.75rem 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-tekken-outline:hover {
+    background-color: rgba(30, 144, 255, 0.1);
+    color: var(--tekken-blue);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(30, 144, 255, 0.2);
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 8rem 0 6rem;
+    background: linear-gradient(rgba(10, 10, 18, 0.9), rgba(10, 10, 18, 0.9)), url('https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center;
+    background-size: cover;
+    position: relative;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    text-shadow: 0 0 20px rgba(227, 6, 19, 0.5), 0 0 20px rgba(30, 144, 255, 0.5);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: rgba(248, 249, 250, 0.8);
+}
+
+.character-animation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    position: relative;
+}
+
+.character {
+    width: 150px;
+    height: 250px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    transition: all 0.5s ease;
+}
+
+.character-left {
+    left: 0;
+    background-image: url('https://www.fightersgeneration.com/characters4/heihachi-pose.png');
+    transform: translateX(-50px);
+    animation: floatLeft 3s infinite ease-in-out;
+}
+
+.character-right {
+    right: 0;
+    background-image: url('https://www.fightersgeneration.com/characters4/kazumi-pose.png');
+    transform: translateX(50px);
+    animation: floatRight 3s infinite ease-in-out;
+}
+
+@keyframes floatLeft {
+    0%, 100% { transform: translateY(0) translateX(-50px); }
+    50% { transform: translateY(-20px) translateX(-50px); }
+}
+
+@keyframes floatRight {
+    0%, 100% { transform: translateY(0) translateX(50px); }
+    50% { transform: translateY(-20px) translateX(50px); }
+}
+
+.vs-circle {
+    width: 80px;
+    height: 80px;
+    background-color: var(--tekken-red);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: white;
+    z-index: 1;
+    box-shadow: 0 0 20px rgba(227, 6, 19, 0.7);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 20px rgba(227, 6, 19, 0.7); }
+    50% { transform: scale(1.1); box-shadow: 0 0 30px rgba(227, 6, 19, 0.9); }
+    100% { transform: scale(1); box-shadow: 0 0 20px rgba(227, 6, 19, 0.7); }
+}
+
+.health-bars {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+.health-bar {
+    width: 45%;
+    height: 10px;
+    background-color: var(--tekken-dark-secondary);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.health-fill {
+    height: 100%;
+    border-radius: 5px;
+    transition: width 0.5s ease;
+}
+
+.health-bar.left .health-fill {
+    background: linear-gradient(90deg, var(--tekken-red), #ff4d4d);
+}
+
+.health-bar.right .health-fill {
+    background: linear-gradient(90deg, var(--tekken-blue), #4da6ff);
+}
+
+/* Section Styles */
+.section-dark {
+    padding: 6rem 0;
+    background-color: var(--tekken-dark-secondary);
+    position: relative;
+    overflow: hidden;
+}
+
+.section-title {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(30, 144, 255, 0.5);
+}
+
+.section-title span {
+    display: inline-block;
+    margin: 0 0.5rem;
+}
+
+/* About Section */
+.about-card {
+    background-color: rgba(10, 10, 18, 0.7);
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--tekken-red);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.about-card h3 {
+    margin-bottom: 1.5rem;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.tekken-trailer {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 2px solid var(--tekken-red);
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--tekken-red), var(--tekken-blue));
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 3rem;
+}
+
+.timeline-item:nth-child(even) {
+    justify-content: flex-start;
+    padding-left: 3rem;
+    padding-right: 0;
+}
+
+.timeline-date {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--tekken-dark);
+    color: var(--tekken-yellow);
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    border: 2px solid var(--tekken-yellow);
+    z-index: 1;
+}
+
+.timeline-content {
+    width: calc(50% - 4rem);
+    background-color: rgba(10, 10, 18, 0.7);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-top: 3px solid var(--tekken-red);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    border-top-color: var(--tekken-blue);
+}
+
+.timeline-content h3 {
+    margin-bottom: 1rem;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.timeline-content p {
+    margin-bottom: 0.5rem;
+    color: rgba(248, 249, 250, 0.8);
+}
+
+/* Prizes Section */
+.prize-card {
+    border-radius: 10px;
+    overflow: hidden;
+    height: 100%;
+    position: relative;
+    transition: transform 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.prize-card:hover {
+    transform: translateY(-10px);
+}
+
+.prize-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+    z-index: 1;
+}
+
+.prize-rank {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 80px;
+    height: 80px;
+    background-color: var(--tekken-yellow);
+    color: var(--tekken-dark);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    font-size: 2rem;
+    z-index: 2;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.prize-content {
+    padding: 2rem 1.5rem 1.5rem;
+    position: relative;
+    z-index: 1;
+    height: 100%;
+}
+
+.prize-content h3 {
+    margin-bottom: 1.5rem;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.prize-content ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.prize-content ul li {
+    margin-bottom: 0.75rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.prize-content ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--tekken-yellow);
+    font-size: 1.2rem;
+}
+
+.gold {
+    background: linear-gradient(135deg, #f5d742, #d4af37);
+    border: 2px solid #d4af37;
+}
+
+.silver {
+    background: linear-gradient(135deg, #e6e8eb, #c0c0c0);
+    border: 2px solid #c0c0c0;
+}
+
+.bronze {
+    background: linear-gradient(135deg, #cd7f32, #804a00);
+    border: 2px solid #804a00;
+}
+
+.special-prizes {
+    background-color: rgba(10, 10, 18, 0.7);
+    padding: 2rem;
+    border-radius: 10px;
+    border-top: 3px solid var(--tekken-blue);
+}
+
+.special-prize {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    background-color: rgba(30, 144, 255, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.special-prize:hover {
+    transform: translateY(-5px);
+    background-color: rgba(30, 144, 255, 0.2);
+}
+
+.special-prize i {
+    font-size: 2rem;
+    color: var(--tekken-blue);
+    margin-bottom: 1rem;
+}
+
+.special-prize h4 {
+    font-size: 1.1rem;
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 0;
+}
+
+/* Register Section */
+.register-info {
+    background-color: rgba(10, 10, 18, 0.7);
+    padding: 2rem;
+    border-radius: 10px;
+    border-left: 4px solid var(--tekken-blue);
+    height: 100%;
+}
+
+.register-info h3 {
+    margin-bottom: 1.5rem;
+    font-family: 'Orbitron', sans-serif);
+}
+
+.register-features {
+    margin-top: 2rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.feature-item i {
+    color: var(--tekken-yellow);
+    margin-right: 1rem;
+    font-size: 1.2rem;
+}
+
+.register-form {
+    background-color: rgba(10, 10, 18, 0.7);
+    padding: 2rem;
+    border-radius: 10px;
+    border-right: 4px solid var(--tekken-red);
+}
+
+.tekken-input {
+    background-color: rgba(26, 26, 36, 0.8);
+    border: 1px solid var(--tekken-gray);
+    color: var(--tekken-light);
+    padding: 0.75rem 1rem;
+}
+
+.tekken-input:focus {
+    background-color: rgba(26, 26, 36, 0.9);
+    border-color: var(--tekken-blue);
+    color: var(--tekken-light);
+    box-shadow: 0 0 0 0.25rem rgba(30, 144, 255, 0.25);
+}
+
+.form-check-input:checked {
+    background-color: var(--tekken-red);
+    border-color: var(--tekken-red);
+}
+
+/* Footer */
+.footer-dark {
+    background-color: var(--tekken-dark);
+    padding: 4rem 0 2rem;
+    border-top: 1px solid rgba(227, 6, 19, 0.3);
+}
+
+.footer-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.social-icons {
+    margin-top: 1.5rem;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(30, 144, 255, 0.1);
+    border-radius: 50%;
+    margin-right: 0.75rem;
+    color: var(--tekken-blue);
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: var(--tekken-blue);
+    color: white;
+    transform: translateY(-3px);
+}
+
+.footer-dark h4 {
+    color: var(--tekken-yellow);
+    margin-bottom: 1.5rem;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+}
+
+.footer-dark ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.footer-dark ul li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-dark ul li a {
+    color: rgba(248, 249, 250, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-dark ul li a:hover {
+    color: var(--tekken-blue);
+    text-decoration: none;
+}
+
+.footer-dark ul li i {
+    margin-right: 0.5rem;
+    color: var(--tekken-red);
+    width: 20px;
+    text-align: center;
+}
+
+.footer-bottom {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(248, 249, 250, 0.1);
+    text-align: center;
+    color: rgba(248, 249, 250, 0.5);
+    font-size: 0.9rem;
+}
+
+/* Fight Modal */
+.tekken-modal {
+    background-color: transparent;
+    border: none;
+}
+
+.fight-animation {
+    position: relative;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fight-text {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    font-size: 5rem;
+    color: var(--tekken-red);
+    text-shadow: 0 0 20px rgba(227, 6, 19, 0.7);
+    animation: fightPulse 0.5s infinite alternate;
+    transform: scale(0);
+    animation: fightAppear 1s forwards;
+}
+
+@keyframes fightAppear {
+    0% { transform: scale(0); opacity: 0; }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fightPulse {
+    0% { transform: scale(1); text-shadow: 0 0 20px rgba(227, 6, 19, 0.7); }
+    100% { transform: scale(1.1); text-shadow: 0 0 30px rgba(227, 6, 19, 0.9); }
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+    
+    .character-animation {
+        height: 250px;
+    }
+    
+    .character {
+        width: 120px;
+        height: 200px;
+    }
+    
+    .vs-circle {
+        width: 60px;
+        height: 60px;
+        font-size: 1.2rem;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 6rem 0 4rem;
+    }
+    
+    .hero-content {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+    
+    .hero-content .d-flex {
+        justify-content: center;
+    }
+    
+    .timeline::before {
+        left: 30px;
+    }
+    
+    .timeline-item,
+    .timeline-item:nth-child(even) {
+        justify-content: flex-start;
+        padding-left: 70px;
+        padding-right: 0;
+    }
+    
+    .timeline-date {
+        left: 0;
+        transform: translateX(0);
+    }
+    
+    .timeline-content {
+        width: 100%;
+    }
+    
+    .register-info {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .prize-rank {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .fight-text {
+        font-size: 3rem;
+    }
+}
+
+.character-animation {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+    perspective: 1000px;
+    margin: 2rem 0;
+}
+
+.character {
+    position: absolute;
+    width: 180px;
+    height: 300px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
+    z-index: 1;
+}
+
+.character-left {
+    left: 10%;
+    background-image: url('./tekk.png');
+    transform: translateX(-30px) rotateY(15deg);
+    animation: floatLeft 3s infinite ease-in-out;
+}
+
+.character-right {
+    right: 10%;
+    background-image: url('https://eng.tekkenpedia.com/images/thumb/d/d9/Jin_Kazama_TTT2_CG_art-png/180px-Jin_Kazama_TTT2_CG_art.png');
+    transform: translateX(30px) rotateY(-15deg);
+    animation: floatRight 3s infinite ease-in-out;
+}
+
+.vs-circle {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, rgba(227, 6, 19, 0.9), rgba(30, 144, 255, 0.9));
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    font-size: 1.8rem;
+    color: white;
+    z-index: 2;
+    box-shadow: 
+        0 0 20px rgba(227, 6, 19, 0.7),
+        0 0 40px rgba(30, 144, 255, 0.5),
+        inset 0 0 10px rgba(255, 255, 255, 0.2);
+    border: 3px solid rgba(255, 204, 0, 0.8);
+    animation: pulse 2s infinite, rotate 15s infinite linear;
+    overflow: hidden;
+}
+
+.vs-circle::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to bottom right,
+        transparent 45%,
+        rgba(255, 255, 255, 0.15) 50%,
+        transparent 55%
+    );
+    transform: rotate(45deg);
+    z-index: 1;
+}
+
+.vs-circle img {
+    width: 40px;
+    height: auto;
+    margin: 5px 0;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s ease;
+    z-index: 2;
+}
+
+.vs-circle img:first-child {
+    transform: rotate(-10deg);
+}
+
+.vs-circle img:last-child {
+    transform: rotate(10deg);
+}
+
+.vs-circle span {
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    margin: 5px 0;
+}
+
+@keyframes floatLeft {
+    0%, 100% { transform: translateY(0) translateX(-30px) rotateY(15deg); }
+    50% { transform: translateY(-20px) translateX(-30px) rotateY(15deg); }
+}
+
+@keyframes floatRight {
+    0%, 100% { transform: translateY(0) translateX(30px) rotateY(-15deg); }
+    50% { transform: translateY(-20px) translateX(30px) rotateY(-15deg); }
+}
+
+@keyframes pulse {
+    0% { 
+        box-shadow: 
+            0 0 20px rgba(227, 6, 19, 0.7),
+            0 0 40px rgba(30, 144, 255, 0.5);
+        transform: scale(1);
+    }
+    50% { 
+        box-shadow: 
+            0 0 30px rgba(227, 6, 19, 0.9),
+            0 0 60px rgba(30, 144, 255, 0.7);
+        transform: scale(1.05);
+    }
+    100% { 
+        box-shadow: 
+            0 0 20px rgba(227, 6, 19, 0.7),
+            0 0 40px rgba(30, 144, 255, 0.5);
+        transform: scale(1);
+    }
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Hover Effects */
+.character-left:hover {
+    transform: translateX(-20px) rotateY(25deg) scale(1.1);
+    filter: drop-shadow(0 10px 20px rgba(227, 6, 19, 0.5));
+}
+
+.character-right:hover {
+    transform: translateX(20px) rotateY(-25deg) scale(1.1);
+    filter: drop-shadow(0 10px 20px rgba(30, 144, 255, 0.5));
+}
+
+.vs-circle:hover {
+    animation: pulse 0.5s infinite, rotate 5s infinite linear;
+}
+
+.vs-circle:hover img:first-child {
+    transform: rotate(-15deg) translateY(-5px);
+}
+
+.vs-circle:hover img:last-child {
+    transform: rotate(15deg) translateY(5px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .character-animation {
+        height: 300px;
+    }
+    
+    .character {
+        width: 150px;
+        height: 250px;
+    }
+    
+    .vs-circle {
+        width: 80px;
+        height: 80px;
+        font-size: 1.5rem;
+    }
+    
+    .vs-circle img {
+        width: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .character-animation {
+        height: 250px;
+    }
+    
+    .character {
+        width: 120px;
+        height: 200px;
+    }
+    
+    .character-left {
+        left: 5%;
+    }
+    
+    .character-right {
+        right: 5%;
+    }
+    
+    .vs-circle {
+        width: 70px;
+        height: 70px;
+        font-size: 1.2rem;
+    }
+    
+    .vs-circle img {
+        width: 25px;
+    }
+}

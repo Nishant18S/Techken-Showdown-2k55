@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techken Showdown 2K25 Hackathon - Tekken Themed</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body class="dark-theme">
+    <!-- Loading Animation -->
+    <div class="loading-screen">
+        <div class="tekken-logo">
+            <span>Techken Showdown 2K25</span>
+            <span>HACKATHON</span>
+        </div>
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark-tekken sticky-top">
+        <div class="container">
+            <a class="navbar-brand tekken-font" href="#">
+                <span class="tekken-red">Techken</span> <span class="tekken-blue">Showdown 2K25</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#schedule">Schedule</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#prizes">Prizes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#register">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content">
+                    <h1 class="tekken-font mb-4">
+                        <span class="tekken-red">Techken</span> <span class="tekken-blue">Showdown 2K25</span> <span class="tekken-yellow">HACKATHON</span>
+                    </h1>
+                    <p class="lead mb-4">Battle it out in the ultimate coding tournament. Show your skills, defeat your opponents, and claim the King of Techken Showdown 2K25 title!</p>
+                    <div class="d-flex gap-3">
+                        <a href="#register" class="btn btn-tekken-red btn-lg">Register Now</a>
+                        <a href="#about" class="btn btn-tekken-outline btn-lg">Learn More</a>
+                    </div>
+                </div>
+                <!-- <div class="col-lg-6">
+                    <div class="character-animation">
+                        <div class="character character-left" id="heihachi"></div>
+                        <div class="vs-circle">
+                            <span>VS</span>
+                        </div>
+                        <div class="character character-right" id="kazumi"></div>
+                    </div>
+                </div> -->
+                <div class="col-lg-6">
+                    <div class="character-animation">
+                        <div class="character character-left" id="heihachi"></div>
+                        <div class="vs-circle">
+                            <img src="https://static.wikia.nocookie.net/tekken/images/0/09/TekkenMobile_Logo2.png/revision/latest/scale-to-width/360?cb=20180117035505&path-prefix=en" alt="Top Image" style="width: 50px; height: auto; display: block; margin: 0 auto;">
+                            <span>VS</span>
+                            <img src="https://assets1.ignimgs.com/2019/08/26/tekken-7---button-fin-1566850630249.jpg" alt="Bottom Image" style="width: 50px; height: auto; display: block; margin: 0 auto;">
+                        </div>
+                        <div class="character character-right" id="kazumi"></div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+        <div class="health-bars">
+            <div class="health-bar left">
+                <div class="health-fill" style="width: 80%"></div>
+            </div>
+            <div class="health-bar right">
+                <div class="health-fill" style="width: 65%"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="section-dark">
+        <div class="container">
+            <h2 class="section-title tekken-font">
+                <span class="tekken-red">ABOUT</span> <span class="tekken-blue">THE EVENT</span>
+            </h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="about-card">
+                        <h3 class="tekken-yellow">The Tournament</h3>
+                        <p>The Techken Showdown 2K25 Hackathon is a 48-hour coding competition where developers, designers, and innovators come together to create amazing projects inspired by the Tekken universe.</p>
+                        <p>Participants will form teams and battle it out to create the most impressive applications, games, or tech solutions.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-card">
+                        <h3 class="tekken-yellow">The Theme</h3>
+                        <p>This year's theme is "The King of Techken Showdown 2K25 Tournament" - celebrating the legacy of the Tekken fighting game series.</p>
+                        <p>Projects should incorporate elements of fighting games, competition, or martial arts in innovative ways.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12">
+                    <div class="tekken-trailer">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/sfZNBbCtC2M?si=12ZAvE5hQ5SD6XI-" title="Tekken 8 Trailer" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="schedule" class="section-dark">
+        <div class="container">
+            <h2 class="section-title tekken-font">
+                <span class="tekken-red">EVENT</span> <span class="tekken-blue">SCHEDULE</span>
+            </h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">DAY 1</div>
+                    <div class="timeline-content">
+                        <h3 class="tekken-yellow">Opening Ceremony</h3>
+                        <p>10:00 AM - Welcome and rules explanation</p>
+                        <p>11:00 AM - Team formation</p>
+                        <p>12:00 PM - Hacking begins!</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">DAY 2</div>
+                    <div class="timeline-content">
+                        <h3 class="tekken-yellow">Midpoint Check-in</h3>
+                        <p>10:00 AM - Progress presentations</p>
+                        <p>12:00 PM - Workshop: Advanced combat mechanics</p>
+                        <p>6:00 PM - Tekken 8 exhibition match</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">DAY 3</div>
+                    <div class="timeline-content">
+                        <h3 class="tekken-yellow">Final Battles</h3>
+                        <p>10:00 AM - Submission deadline</p>
+                        <p>11:00 AM - Project presentations</p>
+                        <p>2:00 PM - Judging and awards</p>
+                        <p>4:00 PM - Closing ceremony</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prizes Section -->
+    <section id="prizes" class="section-dark">
+        <div class="container">
+            <h2 class="section-title tekken-font">
+                <span class="tekken-red">PRIZES</span> <span class="tekken-blue">& REWARDS</span>
+            </h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="prize-card gold">
+                        <div class="prize-rank">1st</div>
+                        <div class="prize-content">
+                            <h3 class="tekken-yellow">King of Techken Showdown 2K25</h3>
+                            <ul>
+                                <li>$5,000 cash prize</li>
+                                <li>Tekken 8 Collector's Edition</li>
+                                <li>Interview feature on Tekken website</li>
+                                <li>Mentorship with Bandai Namco devs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="prize-card silver">
+                        <div class="prize-rank">2nd</div>
+                        <div class="prize-content">
+                            <h3 class="tekken-yellow">Devil's Advocate</h3>
+                            <ul>
+                                <li>$2,500 cash prize</li>
+                                <li>Tekken 8 Deluxe Edition</li>
+                                <li>High-end gaming peripherals</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="prize-card bronze">
+                        <div class="prize-rank">3rd</div>
+                        <div class="prize-content">
+                            <h3 class="tekken-yellow">Techken Showdown 2K25</h3>
+                            <ul>
+                                <li>$1,000 cash prize</li>
+                                <li>Tekken 8 Standard Edition</li>
+                                <li>Tekken merchandise pack</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="special-prizes mt-5">
+                <h3 class="tekken-yellow text-center mb-4">Special Category Prizes</h3>
+                <div class="row">
+                    <div class="col-md-3 col-6 mb-3">
+                        <div class="special-prize">
+                            <i class="fas fa-fist-raised"></i>
+                            <h4>Best Combat System</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-3">
+                        <div class="special-prize">
+                            <i class="fas fa-paint-brush"></i>
+                            <h4>Best Visual Design</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-3">
+                        <div class="special-prize">
+                            <i class="fas fa-lightbulb"></i>
+                            <h4>Most Innovative</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-3">
+                        <div class="special-prize">
+                            <i class="fas fa-users"></i>
+                            <h4>Community Favorite</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Register Section -->
+    <section id="register" class="section-dark">
+        <div class="container">
+            <h2 class="section-title tekken-font">
+                <span class="tekken-red">REGISTER</span> <span class="tekken-blue">NOW</span>
+            </h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="register-info">
+                        <h3 class="tekken-yellow">Join the Tournament</h3>
+                        <p>Registration closes on <strong>June 30, 2023</strong></p>
+                        <p>Maximum team size: 4 members</p>
+                        <p>All skill levels welcome!</p>
+                        <div class="register-features">
+                            <div class="feature-item">
+                                <i class="fas fa-tshirt"></i>
+                                <span>Free event t-shirt for all participants</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-utensils"></i>
+                                <span>Food and drinks provided</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-gamepad"></i>
+                                <span>Gaming area with Tekken stations</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <form class="register-form">
+                        <div class="mb-3">
+                            <input type="text" class="form-control tekken-input" placeholder="Full Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control tekken-input" placeholder="Email Address" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control tekken-input" placeholder="Team Name (if applicable)">
+                        </div>
+                        <div class="mb-3">
+                            <select class="form-select tekken-input" required>
+                                <option value="" disabled selected>Skill Level</option>
+                                <option value="beginner">Beginner</option>
+                                <option value="intermediate">Intermediate</option>
+                                <option value="advanced">Advanced</option>
+                            </select>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="agreeTerms" required>
+                            <label class="form-check-label" for="agreeTerms">I agree to the competition rules</label>
+                        </div>
+                        <button type="submit" class="btn btn-tekken-red w-100">Submit Registration</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h3 class="tekken-font footer-title">
+                        <span class="tekken-red">Techken</span> <span class="tekken-blue">Showdown 2K25</span>
+                    </h3>
+                    <p>The ultimate coding tournament inspired by the legendary Tekken fighting game series.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="#"><i class="fab fa-twitch"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#schedule">Schedule</a></li>
+                        <li><a href="#prizes">Prizes</a></li>
+                        <li><a href="#register">Register</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Rules & Guidelines</a></li>
+                        <li><a href="#">Tekken API</a></li>
+                        <li><a href="#">Asset Pack</a></li>
+                        <li><a href="#">Previous Winners</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> hackathon@tekken.com</li>
+                        <li><i class="fas fa-phone"></i> +91 7978304877</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Nishant Sankar Swain</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Techken Showdown 2K25 Hackathon. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fight Animation Modal -->
+    <div class="modal fade" id="fightModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content tekken-modal">
+                <div class="modal-body text-center">
+                    <div class="fight-animation">
+                        <div class="fight-text">FIGHT!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
