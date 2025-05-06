@@ -4,8 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('.loading-screen').style.opacity = '0';
         setTimeout(function() {
             document.querySelector('.loading-screen').style.display = 'none';
-
-            // Show welcome speech and fight animation (speech handled inside)
             showWelcomeSpeech();
         }, 500);
     }, 2500);
@@ -81,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(animateHealthBars, 1000);
     }
 
-    // Welcome speech and fight animation
+    // Welcome speech (visual + sound only, no voice)
     function showWelcomeSpeech() {
         const speechElement = document.createElement('div');
         speechElement.className = 'tekken-speech';
@@ -97,68 +95,25 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
         document.body.appendChild(speechElement);
 
-        if ('speechSynthesis' in window) {
-            const speech = new SpeechSynthesisUtterance(
-                "Welcome to TEKKEN SHOWCASE 2K55! The ultimate battle of code and creativity begins now! LET'S FIGHT!"
-            );
-            speech.volume = 1;
-            speech.rate = 0.9;
-            speech.pitch = 0.8;
+        setTimeout(() => {
+            speechElement.classList.add('show');
 
-            const voices = window.speechSynthesis.getVoices();
-            const tekkenVoice = voices.find(voice =>
-                voice.name.includes('Microsoft David') ||
-                voice.name.includes('Google US English') ||
-                voice.lang.includes('en-US')
-            );
-            if (tekkenVoice) {
-                speech.voice = tekkenVoice;
-            }
+            const fightSound = document.getElementById('fightSound');
+            fightSound.volume = 0.7;
+            fightSound.play().catch(e => console.log("Audio play failed:", e));
 
             setTimeout(() => {
-                speechElement.classList.add('show');
-                window.speechSynthesis.speak(speech);
-
-                speech.onboundary = function(event) {
-                    if (event.charIndex > speech.text.indexOf("LET'S FIGHT!") - 10) {
-                        const fightSound = document.getElementById('fightSound');
-                        fightSound.volume = 0.7;
-                        fightSound.play().catch(e => console.log("Audio play failed:", e));
-                    }
-                };
-
+                speechElement.classList.remove('show');
                 setTimeout(() => {
-                    speechElement.classList.remove('show');
-                    setTimeout(() => {
-                        speechElement.remove();
-                        const fightModal = new bootstrap.Modal(document.getElementById('fightModal'));
-                        fightModal.show();
-                        document.getElementById('fightModal').addEventListener('shown.bs.modal', function() {
-                            setTimeout(animateHealthBars, 1500);
-                        });
-                    }, 500);
-                }, 4000);
-            }, 100);
-        } else {
-            // Fallback
-            setTimeout(() => {
-                speechElement.classList.add('show');
-                const fightSound = document.getElementById('fightSound');
-                fightSound.volume = 0.7;
-                fightSound.play().catch(e => console.log("Audio play failed:", e));
-                setTimeout(() => {
-                    speechElement.classList.remove('show');
-                    setTimeout(() => {
-                        speechElement.remove();
-                        const fightModal = new bootstrap.Modal(document.getElementById('fightModal'));
-                        fightModal.show();
-                        document.getElementById('fightModal').addEventListener('shown.bs.modal', function() {
-                            setTimeout(animateHealthBars, 1500);
-                        });
-                    }, 500);
-                }, 3000);
-            }, 100);
-        }
+                    speechElement.remove();
+                    const fightModal = new bootstrap.Modal(document.getElementById('fightModal'));
+                    fightModal.show();
+                    document.getElementById('fightModal').addEventListener('shown.bs.modal', function() {
+                        setTimeout(animateHealthBars, 1500);
+                    });
+                }, 500);
+            }, 3000);
+        }, 1000);
     }
 
     // Form submission
@@ -207,19 +162,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.addEventListener('scroll', animateOnScroll);
     animateOnScroll();
-
-    // Resume speech on user interaction (Safari fix)
-    document.addEventListener('click', () => {
-        speechSynthesis.resume();
-    }, { once: true });
-
-    // Ensure voices are loaded
-    let voicesLoaded = false;
-    window.speechSynthesis.onvoiceschanged = () => { voicesLoaded = true; };
-    if (window.speechSynthesis.getVoices().length > 0) {
-        voicesLoaded = true;
-    }
 });
+
+// Highlight nav link on scroll
 document.addEventListener('DOMContentLoaded', function () {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
@@ -227,8 +172,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function updateActiveLink() {
         const scrollPosition = window.scrollY + window.innerHeight / 2;
 
-        let currentId = 'home'; // Default to 'home'
-
+        let currentId = 'home';
         sections.forEach(section => {
             const top = section.offsetTop;
             const bottom = top + section.offsetHeight;
@@ -244,9 +188,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     window.addEventListener('scroll', updateActiveLink);
-    updateActiveLink(); // Run once on load
+    updateActiveLink();
 });
-// Show/hide button on scroll
+
+// Scroll-to-top button
 window.onscroll = function () {
     const btn = document.getElementById('scrollToTopBtn');
     if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
@@ -256,7 +201,6 @@ window.onscroll = function () {
     }
 };
 
-// Smooth scroll to top
 document.getElementById('scrollToTopBtn').addEventListener('click', function () {
     window.scrollTo({
         top: 0,
